@@ -1,0 +1,70 @@
+import streamlit as st
+from PIL import Image
+
+st.set_page_config(page_title="Gamers Psyche", layout="wide")
+
+st.markdown("""
+<style>
+body {
+    background-color: #0f0f0f;
+    color: #fff;
+    font-family: 'Segoe UI', sans-serif;
+}
+.title {
+    font-size: 48px;
+    color: #00f0ff;
+    text-align: center;
+    margin-bottom: 5px;
+    text-shadow: 2px 2px 8px #000;
+}
+.tagline {
+    font-size: 20px;
+    color: #ccc;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.sidebar-title {
+    font-size: 24px;
+    color: #00f0ff;
+    margin-bottom: 10px;
+}
+.sidebar-section {
+    margin-bottom: 20px;
+}
+</style>
+""", unsafe_allow_html=True)
+
+with st.sidebar:
+    st.markdown("<div class='sidebar-title'>Categories</div>", unsafe_allow_html=True)
+    st.markdown("""
+    - 🎮 **Game Reviews**  
+    - 🧠 **Game Psychology**  
+    - 🔥 **Trending News**  
+    """)
+    st.markdown("---")
+    st.write("**Subscribe for Latest Updates**")
+    st.text_input("Enter your email")
+    st.button("Subscribe")
+
+st.markdown("<div class='title'>Gamers Psyche</div>", unsafe_allow_html=True)
+st.markdown("<div class='tagline'>Unraveling the Mind Behind the Game</div>", unsafe_allow_html=True)
+
+st.markdown("---")
+st.header("Latest Posts")
+
+cols = st.columns(3)
+
+with cols[0]:
+    st.image("https://via.placeholder.com/300x180/202020/FFFFFF?text=GTA+VI", caption="GTA VI Release Insights")
+    st.write("A deep dive into Grand Theft Auto VI and how it compares to GTA V.")
+
+with cols[1]:
+    st.image("https://via.placeholder.com/300x180/202020/FFFFFF?text=Gamer+Rage", caption="Understanding Gamer Rage")
+    st.write("How psychology explains gamer rage and frustration.")
+
+with cols[2]:
+    st.image("https://via.placeholder.com/300x180/202020/FFFFFF?text=Elden+Ring", caption="Elden Ring Progress")
+    st.write("Latest experience from Elden Ring's vast world, including DLC insights.")
+
+st.markdown("---")
+st.write("© 2025 Gamers Psyche | Designed for Gamers & Psychology Enthusiasts")
